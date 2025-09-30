@@ -1,0 +1,9 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='500' height='360' viewBox='0 0 500 360'>
+  <rect width='100%' height='100%' fill='#0b1020'/>
+  <g stroke='#7aa2ff' fill='none' stroke-width='6'>
+    <path d='M100 120h300v40H100z'/>
+    <path d='M140 160v120M360 160v120'/>
+    <path d='M140 220h60M300 220h60'/>
+  </g>
+  <text x='20' y='30' fill='#eaf0ff' font-family='Inter' font-size='20'>Pavlik Harness (schematic)</text>
+</svg>

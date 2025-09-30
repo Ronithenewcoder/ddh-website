@@ -1,0 +1,10 @@
+<svg xmlns='http://www.w3.org/2000/svg' width='600' height='400' viewBox='0 0 600 400'>
+  <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'><stop offset='0%' stop-color='#7aa2ff'/><stop offset='100%' stop-color='#b1c4ff'/></linearGradient></defs>
+  <rect width='100%' height='100%' fill='#0b1020'/>
+  <g transform='translate(120,40)'>
+    <circle cx='160' cy='160' r='70' fill='url(#g)' opacity='0.9'/>
+    <path d='M220 140c60 10 100 70 120 160' stroke='#7aa2ff' stroke-width='10' fill='none'/>
+    <path d='M60 200c50-60 120-80 180-60' stroke='#a6b8ff' stroke-width='8' fill='none' stroke-dasharray='6 8'/>
+  </g>
+  <text x='30' y='30' fill='#eaf0ff' font-family='Inter' font-size='22'>Stylized Hip Diagram</text>
+</svg>
