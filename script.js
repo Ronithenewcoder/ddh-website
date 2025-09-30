@@ -2,9 +2,22 @@ const $ = (q, s=document)=>s.querySelector(q);
 const $$ = (q, s=document)=>[...s.querySelectorAll(q)];
 
 document.addEventListener('DOMContentLoaded', () => {
-  const yearEl = $('#year');
-  if (yearEl) yearEl.textContent = new Date().getFullYear();
+  const yearEl = $('#year'); if (yearEl) yearEl.textContent = new Date().getFullYear();
 
+  // Smooth scrolling fix for internal links (ensures #parents works everywhere)
+  document.addEventListener('click', (e) => {
+    const a = e.target.closest('a[href^="#"]');
+    if (!a) return;
+    const id = a.getAttribute('href').slice(1);
+    const target = document.getElementById(id);
+    if (target) {
+      e.preventDefault();
+      target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+      history.pushState(null, '', `#${id}`);
+    }
+  });
+
+  // Theme toggle
   const toggle = $('#themeToggle');
   if (toggle) {
     let dark = true;
@@ -15,11 +28,13 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 
+  // Reveal on scroll
   const revObs = new IntersectionObserver((entries) => {
     entries.forEach(e => e.target.classList.toggle('is-visible', e.isIntersecting));
   }, { threshold: 0.25 });
   $$('.reveal').forEach(el => revObs.observe(el));
 
+  // Count-up stats
   const counters = $$('.count');
   const counterObs = new IntersectionObserver((entries) => {
     entries.forEach(ent => {
@@ -30,10 +45,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const step = Math.max(1, Math.round(target / 80));
         const iv = setInterval(() => {
           cur += step;
-          if (cur >= target) {
-            cur = target;
-            clearInterval(iv);
-          }
+          if (cur >= target) { cur = target; clearInterval(iv); }
           el.textContent = cur;
         }, 20);
         counterObs.unobserve(el);
@@ -42,6 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
   }, { threshold: 0.6 });
   counters.forEach(c => counterObs.observe(c));
 
+  // Tilt cards
   $$('.tilt').forEach(card => {
     card.addEventListener('pointermove', e => {
       const r = card.getBoundingClientRect();
@@ -52,6 +65,7 @@ document.addEventListener('DOMContentLoaded', () => {
     card.addEventListener('pointerleave', () => card.style.transform = '');
   });
 
+  // Canvas background particles
   const canvas = document.getElementById('bg-canvas');
   if (canvas) {
     const ctx = canvas.getContext('2d');
@@ -64,11 +78,8 @@ document.addEventListener('DOMContentLoaded', () => {
       canvas.style.width = innerWidth + 'px';
       canvas.style.height = innerHeight + 'px';
       particles = new Array(90).fill(0).map(() => ({
-        x: Math.random() * w,
-        y: Math.random() * h,
-        r: Math.random() * 2 + 0.5,
-        vx: (Math.random() - 0.5) * 0.3,
-        vy: (Math.random() - 0.5) * 0.3
+        x: Math.random() * w, y: Math.random() * h, r: Math.random() * 2 + 0.5,
+        vx: (Math.random() - 0.5) * 0.3, vy: (Math.random() - 0.5) * 0.3
       }));
     }
     window.addEventListener('resize', resize);
@@ -79,19 +90,17 @@ document.addEventListener('DOMContentLoaded', () => {
       ctx.globalAlpha = 0.7;
       ctx.fillStyle = '#7aa2ff';
       particles.forEach(p => {
-        p.x += p.vx;
-        p.y += p.vy;
+        p.x += p.vx; p.y += p.vy;
         if (p.x < 0 || p.x > w) p.vx *= -1;
         if (p.y < 0 || p.y > h) p.vy *= -1;
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fill();
+        ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
       });
       requestAnimationFrame(tick);
     }
     tick();
   }
 
+  // GSAP entrance if available
   if (window.gsap) {
     gsap.utils.toArray('.fade-up').forEach((el, i) => {
       gsap.fromTo(el, { y: 20, opacity: 0 }, { y: 0, opacity: 1, duration: 0.8, delay: i * 0.15, ease: 'power2.out' });
