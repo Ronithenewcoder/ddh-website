@@ -9,7 +9,6 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css"/>
-  <!-- Animations -->
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
   <script src="script.js" defer></script>
@@ -155,99 +154,94 @@
       </div>
     </section>
 
-  <!-- PHOTOS (LOCAL, SELF-HOSTED) -->
-<section id="gallery" class="section reveal">
-  <div class="container">
-    <h2>Photo Gallery</h2>
-    <p class="subtitle">Educational photos. Click captions for original image pages & licensing.</p>
+    <!-- PHOTOS (LOCAL GALLERY) -->
+    <section id="gallery" class="section reveal">
+      <div class="container">
+        <h2>Photo Gallery</h2>
+        <p class="subtitle">Educational photos. Click captions for original image pages & licensing.</p>
 
-    <div class="masonry">
-      <figure class="tile">
-        <img src="assets/abduction-brace.jpg" alt="Infant wearing abduction brace similar to Pavlik harness">
-        <figcaption>
-          <a href="https://commons.wikimedia.org/wiki/File:Saeugling_mit_angelegter_spreizhose.jpg" target="_blank" rel="noopener">Abduction brace (similar to Pavlik)</a> · CC BY-SA 3.0
-        </figcaption>
-      </figure>
+        <div class="masonry">
+          <figure class="tile">
+            <img src="assets/abduction-brace.jpg" alt="Infant wearing abduction brace similar to Pavlik harness">
+            <figcaption>
+              <a href="https://commons.wikimedia.org/wiki/File:Saeugling_mit_angelegter_spreizhose.jpg" target="_blank" rel="noopener">Abduction brace (similar to Pavlik)</a> · CC BY-SA 3.0
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="assets/ddh-ultrasound.jpg" alt="Ultrasound measuring developmental dysplasia of the right hip">
+            <figcaption>
+              <a href="https://commons.wikimedia.org/wiki/File:Ultrasound_measuring_the_developmental_dysplasia_of_right_hip.jpg" target="_blank" rel="noopener">Ultrasound DDH</a> · CC BY-SA
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="assets/hip-dysplasia-xray.jpg" alt="X-ray of hip dysplasia">
+            <figcaption>
+              <a href="https://commons.wikimedia.org/wiki/File:X-ray_of_hip_dysplasia.jpg" target="_blank" rel="noopener">X-ray of hip dysplasia</a> · Wikimedia
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="assets/hip-dysplasia-ap.jpg" alt="AP pelvis radiograph showing hip dysplasia">
+            <figcaption>
+              <a href="https://commons.wikimedia.org/wiki_File:X-ray_of_hip_dysplasia_in_adult.jpg" target="_blank" rel="noopener">AP pelvis—hip dysplasia</a> · CC BY-SA
+            </figcaption>
+          </figure>
+          <figure class="tile">
+            <img src="assets/pavlik-photo.jpg" alt="Pavlik harness photo">
+            <figcaption>
+              <a href="https://commons.wikimedia.org/wiki/File:Pavlik.jpg" target="_blank" rel="noopener">Pavlik harness</a> · Wikimedia
+            </figcaption>
+          </figure>
+        </div>
 
-      <figure class="tile">
-        <img src="assets/ddh-ultrasound.jpg" alt="Ultrasound measuring developmental dysplasia of the right hip">
-        <figcaption>
-          <a href="https://commons.wikimedia.org/wiki/File:Ultrasound_measuring_the_developmental_dysplasia_of_right_hip.jpg" target="_blank" rel="noopener">Ultrasound DDH</a> · CC BY-SA
-        </figcaption>
-      </figure>
+        <p class="disclaimer">Photos are for education only; always follow your clinician’s instructions.</p>
+      </div>
+    </section>
 
-      <figure class="tile">
-        <img src="assets/hip-dysplasia-xray.jpg" alt="X-ray of hip dysplasia">
-        <figcaption>
-          <a href="https://commons.wikimedia.org/wiki/File:X-ray_of_hip_dysplasia.jpg" target="_blank" rel="noopener">X-ray of hip dysplasia</a> · Wikimedia
-        </figcaption>
-      </figure>
-
-      <figure class="tile">
-        <img src="assets/hip-dysplasia-ap.jpg" alt="AP pelvis radiograph showing hip dysplasia">
-        <figcaption>
-          <a href="https://commons.wikimedia.org/wiki/File:X-ray_of_hip_dysplasia_in_adult.jpg" target="_blank" rel="noopener">AP pelvis—hip dysplasia</a> · CC BY-SA
-        </figcaption>
-      </figure>
-
-      <figure class="tile">
-        <img src="assets/pavlik-photo.jpg" alt="Pavlik harness photo">
-        <figcaption>
-          <a href="https://commons.wikimedia.org/wiki/File:Pavlik.jpg" target="_blank" rel="noopener">Pavlik harness</a> · Wikimedia
-        </figcaption>
-      </figure>
-    </div>
-
-    <p class="disclaimer">Photos are for education only; always follow your clinician’s instructions.</p>
-  </div>
-</section>
-
-
-    <!-- VIDEOS -->
+    <!-- VIDEOS (embedded iframes) -->
     <section id="videos" class="section alt reveal">
       <div class="container">
         <h2>Care Videos for Parents & Caregivers</h2>
-        <p class="subtitle">Trusted tutorials from hospitals and the International Hip Dysplasia Institute.</p>
+        <p class="subtitle">Embedded tutorials for easier viewing:</p>
 
         <div class="video-grid">
-          <article class="card">
+          <div class="video-card">
             <h3>Pavlik Harness: Parent Overview (Mayo Clinic)</h3>
-            <p>Diagnosis & treatment overview with harness principles.</p>
-            <a class="btn btn-primary" href="https://www.youtube.com/watch?v=foUkowsvNXI" target="_blank" rel="noopener">Watch on YouTube</a>
-          </article>
+            <div class="video-wrap">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/foUkowsvNXI" title="Pavlik Harness Overview" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
 
-          <article class="card">
+          <div class="video-card">
             <h3>How to Put On the Pavlik Harness</h3>
-            <p>Step-by-step demonstration for caregivers.</p>
-            <a class="btn btn-primary" href="https://www.youtube.com/watch?v=lJEVqbgut7o" target="_blank" rel="noopener">Watch on YouTube</a>
-          </article>
+            <div class="video-wrap">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/lJEVqbgut7o" title="Putting on Pavlik Harness" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
 
-          <article class="card">
+          <div class="video-card">
             <h3>Hip-Healthy Swaddling (IHDI)</h3>
-            <p>Safe swaddling that lets the hips flex/abduct.</p>
-            <a class="btn btn-primary" href="https://www.youtube.com/watch?v=LLqfRQdUP7k" target="_blank" rel="noopener">Watch on YouTube</a>
-          </article>
+            <div class="video-wrap">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/LLqfRQdUP7k" title="Hip-Healthy Swaddling" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
 
-          <article class="card">
+          <div class="video-card">
             <h3>DDH & Pavlik Harness (Boston Children’s)</h3>
-            <p>When to use the harness and what to expect.</p>
-            <a class="btn btn-primary" href="https://www.youtube.com/watch?v=gTX6EXTDA0s" target="_blank" rel="noopener">Watch on YouTube</a>
-          </article>
+            <div class="video-wrap">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/gTX6EXTDA0s" title="DDH & Pavlik Harness Boston’s" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+          </div>
 
-          <article class="card">
+          <div class="video-card">
             <h3>Pavlik Harness Tips (IHDI)</h3>
-            <p>Practical advice for day-to-day care.</p>
-            <a class="btn btn-primary" href="https://hipdysplasia.org/pavlik-harness-professional-resources/pavlik-harness-tips-for-parents/" target="_blank" rel="noopener">Open Resource</a>
-          </article>
+            <div class="video-wrap">
+              <iframe width="560" height="315" src="https://www.youtube.com/embed/your_video_id_here" title="Pavlik Tips" frameborder="0" allowfullscreen></iframe>
+            </div>
+          </div>
 
-          <article class="card">
-            <h3>Hip-Healthy Swaddling Guide (IHDI)</h3>
-            <p>Written guide and swaddle do’s & don’ts.</p>
-            <a class="btn btn-primary" href="https://hipdysplasia.org/infant-child/hip-healthy-swaddling/" target="_blank" rel="noopener">Open Guide</a>
-          </article>
         </div>
 
-        <p class="disclaimer">Videos are external resources. Follow your orthopedist’s specific instructions.</p>
+        <p class="disclaimer">Follow your orthopedist’s instructions above all video tutorials.</p>
       </div>
     </section>
 
@@ -289,3 +283,4 @@
   </footer>
 </body>
 </html>
+
