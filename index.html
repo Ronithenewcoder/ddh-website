@@ -1,14 +1,14 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>DDH Education • Developmental Dysplasia of the Hip</title>
-  <meta name="description" content="A friendly, animated website that explains Developmental Dysplasia of the Hip (DDH) for students, clinicians, and families."/>
+  <meta name="description" content="Animated, modern DDH education site with caregiver videos and trusted links for parents (Pavlik harness straps, swaddling, positioning).">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css"/>
+  <link rel="stylesheet" href="styles.css">
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
   <script src="script.js" defer></script>
@@ -16,7 +16,8 @@
 <body>
   <canvas id="bg-canvas" aria-hidden="true"></canvas>
 
-  <header class="site-header" role="banner">
+  <!-- Header -->
+  <header class="site-header">
     <a class="logo" href="#home" aria-label="DDH education home">DDH<span>edu</span></a>
     <nav aria-label="Primary">
       <a href="#about">What is DDH?</a>
@@ -25,18 +26,22 @@
       <a href="#treatment">Treatment</a>
       <a href="#parents">Parent Guide</a>
       <a href="#videos">Videos</a>
-      <a href="#case">Case Study</a>
+      <a href="#links">Photo & Diagram Links</a>
       <a href="#refs">References</a>
     </nav>
-    <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    <div class="header-actions">
+      <button id="themeToggle" aria-label="Toggle dark mode">🌙</button>
+    </div>
   </header>
 
   <main>
     <!-- HERO -->
     <section id="home" class="hero section">
+      <div class="blob blob-1" aria-hidden="true"></div>
+      <div class="blob blob-2" aria-hidden="true"></div>
       <div class="hero__content">
         <h1 class="fade-up"><span class="shimmer">Developmental Dysplasia</span> of the Hip</h1>
-        <p class="subtitle fade-up delay-1">Clear visuals, easy explanations, and resources you can trust.</p>
+        <p class="subtitle fade-up delay-1">Friendly explanations, smooth animations, and trusted resources for families and students.</p>
         <div class="cta-row fade-up delay-2">
           <a class="btn btn-primary" href="#about">Start Learning</a>
           <a class="btn btn-ghost" href="#parents">Guide for Parents</a>
@@ -48,9 +53,12 @@
         </div>
       </div>
       <div class="hero__art parallax" aria-hidden="true">
-        <img src="assets/hip-diagram.svg" alt="Stylized hip diagram"/>
-        <img class="float-baby" src="assets/baby.svg" alt="Baby silhouette"/>
+        <img src="assets/hip-diagram.svg" alt="Stylized hip diagram">
+        <img class="float-baby" src="assets/baby.svg" alt="Baby silhouette">
       </div>
+      <svg class="section-divider" viewBox="0 0 1200 120" preserveAspectRatio="none" aria-hidden="true">
+        <path d="M0,0 C300,120 900,0 1200,100 L1200,0 L0,0 Z"></path>
+      </svg>
     </section>
 
     <!-- WHAT IS DDH -->
@@ -58,7 +66,7 @@
       <div class="container two-col">
         <div>
           <h2>What is <span class="accent">DDH</span>?</h2>
-          <p>DDH is a spectrum of conditions where the hip joint does not develop normally. The socket (acetabulum) can be shallow, and the ball (femoral head) may be partially (<em>subluxation</em>) or completely out of the socket (<em>dislocation</em>). Early detection and age-appropriate treatment can restore normal function.</p>
+          <p>DDH is a spectrum where the hip joint doesn’t develop normally. The socket (acetabulum) may be shallow, and the ball (femoral head) can be partially (<em>subluxation</em>) or completely out of the socket (<em>dislocation</em>). Early detection and age-appropriate treatment can restore normal function.</p>
           <ul class="checklist">
             <li>Spectrum: dysplasia → subluxation → dislocation</li>
             <li>Common in infants and young children</li>
@@ -68,11 +76,9 @@
         </div>
         <div class="card glass">
           <h3>Why it matters</h3>
-          <p>Healthy hips support standing, walking, running, and play. When the femoral head is well-seated in the socket, the acetabulum forms deeply. Instability prevents normal shaping and leads to long-term problems if ignored.</p>
+          <p>Healthy hips support crawl, stand, walk, and play. When the femoral head is well-seated, the socket deepens. Instability prevents normal shaping and leads to long-term problems if ignored.</p>
           <div class="tag-row">
-            <span class="tag">Early</span>
-            <span class="tag">Detect</span>
-            <span class="tag">Treat</span>
+            <span class="tag">Early</span><span class="tag">Detect</span><span class="tag">Treat</span>
           </div>
         </div>
       </div>
@@ -83,25 +89,25 @@
       <div class="container two-col">
         <div class="card">
           <h2>Pathophysiology</h2>
-          <p>DDH arises from an abnormal relationship between the femoral head and acetabulum. If the ball is not centered, the socket stays shallow and the hip becomes unstable. Over time, this can alter gait mechanics and accelerate joint wear.</p>
+          <p>DDH arises from an abnormal relationship between the femoral head and acetabulum. If the ball isn’t centered, the socket stays shallow and the hip becomes unstable. Over time this alters gait mechanics and accelerates joint wear.</p>
           <div class="grid cards small">
             <div class="card tilt">
               <h3>Hormone sensitivity</h3>
-              <p>Female infants are more sensitive to maternal hormones (e.g., relaxin, estrogen), creating ligamentous laxity and instability.</p>
+              <p>Female infants may be more sensitive to maternal hormones (relaxin/estrogen), creating ligamentous laxity and instability.</p>
             </div>
             <div class="card tilt">
               <h3>Breech positioning</h3>
-              <p>Hips in extension/adduction press the femoral head on the rim of the socket, increasing risk up to <strong>20×</strong>.</p>
+              <p>Hips in extension/adduction press the femoral head on the socket rim, increasing risk substantially in breech births.</p>
             </div>
             <div class="card tilt">
-              <h3>First-born &amp; Genetics</h3>
+              <h3>First-born & Genetics</h3>
               <p>Less uterine space and family history both raise risk.</p>
             </div>
           </div>
         </div>
         <figure class="figure">
           <img src="assets/anatomy.svg" alt="Hip anatomy stylized">
-          <figcaption>Ball-and-socket alignment supports acetabular development.</figcaption>
+          <figcaption>Centered ball-and-socket contact drives normal acetabular development.</figcaption>
         </figure>
       </div>
     </section>
@@ -111,7 +117,7 @@
       <div class="container two-col">
         <figure class="figure">
           <img src="assets/ultrasound.svg" alt="Ultrasound hip example">
-          <figcaption>Ultrasound for infants under 6 months; X-ray after 6 months.</figcaption>
+          <figcaption>Ultrasound for infants &lt; 6 months; X-ray after 6 months.</figcaption>
         </figure>
         <div>
           <h2>Screening &amp; Diagnosis</h2>
@@ -133,20 +139,20 @@
           <details open>
             <summary><strong>&lt; 6 months</strong> · Pavlik harness</summary>
             <div class="acc-body">
-              <p>Worn 23–24 hours/day to hold hips flexed and abducted so the socket can form around the femoral head. High success when started early.</p>
+              <p>Worn 23–24 hrs/day to hold hips flexed & abducted so the socket can form around the femoral head.</p>
               <img src="assets/pavlik.svg" alt="Pavlik harness schematic">
             </div>
           </details>
           <details>
             <summary><strong>6–18 months</strong> · Closed reduction + spica cast</summary>
             <div class="acc-body">
-              <p>Under anesthesia, the hip is reduced and immobilized in a cast to maintain position while the acetabulum develops.</p>
+              <p>Under anesthesia the hip is reduced and immobilized to maintain position while the acetabulum develops.</p>
             </div>
           </details>
           <details>
             <summary><strong>&gt; 18 months</strong> · Open reduction ± osteotomy</summary>
             <div class="acc-body">
-              <p>Surgical reduction and, when needed, bone reshaping procedures help realign and stabilize the joint when earlier methods fail or diagnosis is delayed.</p>
+              <p>Surgical reduction and, when needed, bone reshaping help realign/stabilize the joint in delayed or refractory cases.</p>
             </div>
           </details>
         </div>
@@ -161,9 +167,9 @@
           <ol class="steps">
             <li>Keep the harness on <strong>23–24 hrs/day</strong>. Don’t adjust straps without guidance.</li>
             <li>Put the diaper <strong>under</strong> the harness; check skin daily for redness.</li>
-            <li>Use hip-safe swaddling: legs free to flex and abduct.</li>
+            <li>Use hip-healthy swaddling: legs free to flex/abduct.</li>
             <li>Attend all ultrasound/X-ray follow-ups.</li>
-            <li>Ask questions and use teach-back to confirm understanding.</li>
+            <li>Use teach-back: explain care steps in your own words to confirm understanding.</li>
           </ol>
           <div class="note">Tip: Take a photo of strap placement after each clinic visit.</div>
         </div>
@@ -174,7 +180,7 @@
       </div>
     </section>
 
-    <!-- VIDEOS (embedded iframes) -->
+    <!-- VIDEOS -->
     <section id="videos" class="section alt reveal">
       <div class="container">
         <h2>Care Videos for Parents & Caregivers</h2>
@@ -184,28 +190,28 @@
           <div class="video-card">
             <h3>Pavlik Harness: Parent Overview (Mayo Clinic)</h3>
             <div class="video-wrap">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/foUkowsvNXI" title="Pavlik Harness Overview (Mayo Clinic)" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/foUkowsvNXI" title="Pavlik Harness Overview (Mayo Clinic)" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
 
           <div class="video-card">
             <h3>How to Put On the Pavlik Harness</h3>
             <div class="video-wrap">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/lJEVqbgut7o" title="Putting on Pavlik Harness" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/lJEVqbgut7o" title="Putting on Pavlik Harness" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
 
           <div class="video-card">
             <h3>Hip-Healthy Swaddling (IHDI)</h3>
             <div class="video-wrap">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/LLqfRQdUP7k" title="Hip-Healthy Swaddling (IHDI)" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/LLqfRQdUP7k" title="Hip-Healthy Swaddling (IHDI)" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
 
           <div class="video-card">
             <h3>DDH &amp; Pavlik Harness (Boston Children’s)</h3>
             <div class="video-wrap">
-              <iframe width="560" height="315" src="https://www.youtube.com/embed/gTX6EXTDA0s" title="DDH & Pavlik Harness (Boston Children’s)" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+              <iframe src="https://www.youtube.com/embed/gTX6EXTDA0s" title="DDH & Pavlik Harness (Boston Children’s)" allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
           </div>
         </div>
@@ -214,22 +220,45 @@
       </div>
     </section>
 
-    <!-- CASE STUDY -->
-    <section id="case" class="section alt reveal">
-      <div class="container two-col">
-        <div class="card">
-          <h2>Case Study: Emma, 2 months</h2>
-          <p>Emma was born breech. On exam, an Ortolani maneuver produced a palpable “clunk”. Ultrasound confirmed DDH. A Pavlik harness was applied and worn continuously. At 4 months, imaging showed a stable, concentrically reduced hip, and the harness was weaned successfully.</p>
-          <ul class="checklist">
-            <li>Risk: breech presentation</li>
-            <li>Finding: positive Ortolani</li>
-            <li>Outcome: stable hips with early treatment</li>
-          </ul>
+    <!-- PARENT PHOTO & DIAGRAM LINKS (trusted) -->
+    <section id="links" class="section reveal">
+      <div class="container">
+        <h2>Photo & Diagram Links for Parents</h2>
+        <p class="subtitle">These official pages include pictures/diagrams of the <strong>Pavlik harness straps</strong>, diapering with a harness, and <strong>hip-healthy swaddling</strong>.</p>
+
+        <div class="link-grid">
+          <a class="link-card" href="https://hipdysplasia.org/pavlik-harness-professional-resources/pavlik-harness-tips-for-parents/" target="_blank" rel="noopener">
+            <div class="link-title">Pavlik Harness — Tips for Parents (IHDI)</div>
+            <div class="link-desc">Photos of strap positions, clothing/diapering, skin checks, car seat tips.</div>
+          </a>
+
+          <a class="link-card" href="https://hipdysplasia.org/infant-child/hip-healthy-swaddling/" target="_blank" rel="noopener">
+            <div class="link-title">Hip-Healthy Swaddling (IHDI)</div>
+            <div class="link-desc">Clear diagrams: do’s & don’ts so hips can flex/abduct.</div>
+          </a>
+
+          <a class="link-card" href="https://www.childrenshospital.org/sites/default/files/2022-04/HipFactSheet_Pavlik.pdf" target="_blank" rel="noopener">
+            <div class="link-title">Pavlik Harness Fact Sheet (Boston Children’s)</div>
+            <div class="link-desc">Parent handout with images and day-to-day care guidance.</div>
+          </a>
+
+          <a class="link-card" href="https://www.rch.org.au/kidsinfo/fact_sheets/Pavlik_Harness_for_DDH/" target="_blank" rel="noopener">
+            <div class="link-title">Pavlik Harness for DDH (RCH Melbourne)</div>
+            <div class="link-desc">Photos/illustrations of harness straps and positioning.</div>
+          </a>
+
+          <a class="link-card" href="https://www.nationwidechildrens.org/-/media/nch/family-resources/helping-hands/documents/hhii111.pdf" target="_blank" rel="noopener">
+            <div class="link-title">Helping Hands: Pavlik Harness (Nationwide Children’s)</div>
+            <div class="link-desc">Step-by-step parent PDF with strap diagrams and care tips.</div>
+          </a>
+
+          <a class="link-card" href="https://hipdysplasia.org/wp-content/uploads/2020/05/HipHealthySwaddlingBrochure.pdf" target="_blank" rel="noopener">
+            <div class="link-title">Hip-Healthy Swaddling Brochure (IHDI PDF)</div>
+            <div class="link-desc">Printable brochure with big, simple pictures.</div>
+          </a>
         </div>
-        <figure class="figure">
-          <img src="assets/parents.svg" alt="Parent teaching">
-          <figcaption>Hands-on teaching + follow-up = success.</figcaption>
-        </figure>
+
+        <p class="disclaimer">External links open in a new tab. Always follow your clinic’s specific instructions.</p>
       </div>
     </section>
 
@@ -238,18 +267,18 @@
       <div class="container">
         <h2>References</h2>
         <ul class="refs">
-          <li>American Academy of Pediatrics. Clinical Report: Evaluation and Referral for Developmental Dysplasia of the Hip in Infants. <em>Pediatrics</em>. 2016.</li>
-          <li>Cashman JP, Round J, Taylor G, Clarke NM. The natural history of DDH after early supervised treatment in the Pavlik harness. <em>J Bone Joint Surg Br</em>. 2002.</li>
+          <li>American Academy of Pediatrics. Clinical Report: Evaluation and Referral for DDH in Infants. <em>Pediatrics</em>. 2016.</li>
+          <li>Cashman JP, Round J, Taylor G, Clarke NM. Natural history of DDH after early Pavlik harness treatment. <em>J Bone Joint Surg Br</em>. 2002.</li>
         </ul>
-        <p class="disclaimer">This site is educational and does not replace professional medical advice.</p>
+        <p class="disclaimer">Educational content only; not a substitute for medical advice.</p>
       </div>
     </section>
   </main>
 
+  <!-- Footer -->
   <footer class="site-footer">
     <p>© <span id="year"></span> DDH Education. Built with ❤️.</p>
     <a class="to-top" href="#home" aria-label="Back to top">↑</a>
   </footer>
 </body>
 </html>
-
