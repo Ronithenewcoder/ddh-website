@@ -3,16 +3,18 @@ const $$ = (q, s=document)=>[...s.querySelectorAll(q)];
 
 document.addEventListener('DOMContentLoaded', () => {
   // Year
-  $('#year').textContent = new Date().getFullYear();
+  const year = $('#year'); if (year) year.textContent = new Date().getFullYear();
 
   // Theme toggle
   const toggle = $('#themeToggle');
   let dark = true;
-  toggle.addEventListener('click', () => {
-    dark = !dark;
-    document.documentElement.style.setProperty('--bg', dark ? '#0b1020' : '#f4f7ff');
-    document.body.style.color = dark ? '#eaf0ff' : '#0b1020';
-  });
+  if (toggle){
+    toggle.addEventListener('click', () => {
+      dark = !dark;
+      document.documentElement.style.setProperty('--bg', dark ? '#0b1020' : '#f4f7ff');
+      document.body.style.color = dark ? '#eaf0ff' : '#0b1020';
+    });
+  }
 
   // Reveal on scroll
   const revObs = new IntersectionObserver((ents)=> {
@@ -53,38 +55,40 @@ document.addEventListener('DOMContentLoaded', () => {
 
   // Canvas background particles
   const canvas = document.getElementById('bg-canvas');
-  const ctx = canvas.getContext('2d');
-  let w,h,particles;
-  const DPR = Math.min(window.devicePixelRatio || 1, 2);
+  if (canvas){
+    const ctx = canvas.getContext('2d');
+    let w,h,particles;
+    const DPR = Math.min(window.devicePixelRatio || 1, 2);
 
-  function resize(){
-    w = canvas.width = innerWidth * DPR;
-    h = canvas.height = innerHeight * DPR;
-    canvas.style.width = innerWidth+'px';
-    canvas.style.height = innerHeight+'px';
-    particles = new Array(90).fill(0).map(()=>({
-      x: Math.random()*w, y: Math.random()*h, r: Math.random()*2 + 0.5,
-      vx: (Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3
-    }));
-  }
-  window.addEventListener('resize', resize);
-  resize();
+    function resize(){
+      w = canvas.width = innerWidth * DPR;
+      h = canvas.height = innerHeight * DPR;
+      canvas.style.width = innerWidth+'px';
+      canvas.style.height = innerHeight+'px';
+      particles = new Array(90).fill(0).map(()=>({
+        x: Math.random()*w, y: Math.random()*h, r: Math.random()*2 + 0.5,
+        vx: (Math.random()-0.5)*0.3, vy:(Math.random()-0.5)*0.3
+      }));
+    }
+    window.addEventListener('resize', resize);
+    resize();
 
-  function tick(){
-    ctx.clearRect(0,0,w,h);
-    ctx.globalAlpha = 0.7;
-    ctx.fillStyle = '#7aa2ff';
-    particles.forEach(p=>{
-      p.x += p.vx; p.y+=p.vy;
-      if(p.x<0||p.x>w) p.vx*=-1;
-      if(p.y<0||p.y>h) p.vy*=-1;
-      ctx.beginPath();
-      ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
-      ctx.fill();
-    });
-    requestAnimationFrame(tick);
+    function tick(){
+      ctx.clearRect(0,0,w,h);
+      ctx.globalAlpha = 0.7;
+      ctx.fillStyle = '#7aa2ff';
+      particles.forEach(p=>{
+        p.x += p.vx; p.y+=p.vy;
+        if(p.x<0||p.x>w) p.vx*=-1;
+        if(p.y<0||p.y>h) p.vy*=-1;
+        ctx.beginPath();
+        ctx.arc(p.x, p.y, p.r, 0, Math.PI*2);
+        ctx.fill();
+      });
+      requestAnimationFrame(tick);
+    }
+    tick();
   }
-  tick();
 
   // GSAP entrance if available
   if (window.gsap){
@@ -96,3 +100,4 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   }
 });
+

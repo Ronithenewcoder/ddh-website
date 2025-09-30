@@ -65,6 +65,22 @@ nav a:hover{opacity:1;text-decoration:underline}
 .steps li{counter-increment: step;background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:1rem;padding:0.8rem 0.9rem;margin:0.6rem 0;position:relative}
 .steps li::before{content: counter(step);position:absolute;left:-12px;top:-12px;background:var(--accent);color:#0b1020;width:32px;height:32px;display:grid;place-items:center;border-radius:999px;font-weight:800}
 
+/* Masonry photo gallery */
+.masonry{columns:3 280px;column-gap:1rem}
+.tile{break-inside:avoid;background:var(--card);border:1px solid rgba(255,255,255,0.06);border-radius:1rem;overflow:hidden;margin:0 0 1rem}
+.tile img{width:100%;height:auto;display:block}
+.tile figcaption{padding:.6rem .8rem;color:var(--muted);font-size:.9rem}
+
+/* Video grid */
+.video-grid{
+  display:grid;
+  grid-template-columns:repeat(3, 1fr);
+  gap:1rem;
+  margin-top:1rem;
+}
+@media (max-width:950px){ .video-grid{ grid-template-columns:repeat(2,1fr); } }
+@media (max-width:560px){ .video-grid{ grid-template-columns:1fr; } }
+
 /* Footer */
 .site-footer{padding:2rem 1rem;border-top:1px solid rgba(255,255,255,0.06);display:flex;align-items:center;justify-content:space-between;gap:1rem;flex-wrap:wrap}
 .to-top{background:var(--accent);color:#0b1020;border-radius:999px;padding:.5rem .7rem}
